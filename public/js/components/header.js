@@ -1,5 +1,3 @@
-console.log("Ola Mundo");
-
 class Header extends React.Component {
   render() {
     return (
@@ -18,10 +16,12 @@ class Header extends React.Component {
               <a href="/#">Home</a>
             </li>
             <li>
-              <a href="#">Categories</a>
+              <a href="https://github.com/DaSilvaBrunoTexas/MERN-bookmark">
+                About the App
+              </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="http://bruno-dasilva.com/">About me</a>
             </li>
           </ul>
         </div>

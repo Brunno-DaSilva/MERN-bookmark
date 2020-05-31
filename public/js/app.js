@@ -1,5 +1,4 @@
 const BookmarkList = (props) => {
-  console.log(props);
   return (
     <tr>
       <td>{props.bookmark.title}</td>

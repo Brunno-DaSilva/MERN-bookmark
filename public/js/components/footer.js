@@ -1,5 +1,3 @@
-console.log("Ola Mundo");
-
 class Footer extends React.Component {
   render() {
     return (

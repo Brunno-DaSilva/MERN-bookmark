@@ -1,7 +1,20 @@
 const BookmarkList = (props) => {
   return (
-    <tr>
-      <td>{props.bookmark.title}</td>
+    <tr className="bookmark-wrapper">
+      <td>
+        {props.bookmark.complete ? (
+          <form onSubmit={(e) => props.handleSubmit(e)}>
+            <input
+              type="text"
+              onChange={(e) => props.handleChange(e)}
+              defaultValue={props.bookmark.title}
+            />
+            <input type="submit" />
+          </form>
+        ) : (
+          props.bookmark.title
+        )}
+      </td>
       <td>
         <a href={props.bookmark.url} target="_blank">
           {props.bookmark.url}
@@ -11,12 +24,72 @@ const BookmarkList = (props) => {
         <i class="fas fa-trash-alt"></i>
       </td>
 
-      <td onClick={() => props.updateBookmarks(props.bookmark._id)}>
+      <td onClick={() => props.updateBookmarks(props.bookmark)}>
         <i class="fas fa-pencil-alt"></i>
       </td>
     </tr>
   );
 };
+
+// class Edit extends React.Component {
+//   state = {
+//     title: "",
+//     url: "",
+//   };
+//   handleChange = (event) => {
+//     this.setState({ [event.target.id]: event.target.value });
+//   };
+
+//   handleSubmit = (event) => {
+//     event.preventDefault();
+
+//     fetch("/bookmarks", {
+//       body: JSON.stringify({
+//         title: this.state.title,
+//         url: this.state.url,
+//       }),
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json, text/plain, */*",
+//         "Content-Type": "application/json",
+//       },
+//     })
+//       .then((createBookmark) => createBookmark.json())
+//       .then((newBookmark) => {
+//         this.setState({
+//           title: "",
+//           url: "",
+//           bookmarks: [newBookmark, ...this.state.bookmarks],
+//         });
+//       })
+//       .catch((error) => console.log(error));
+//   };
+
+//   render() {
+//     return (
+//       <div className="">
+//         <form onSubmit={this.handleSubmit}>
+//           <input
+//             type="text"
+//             value={this.state.title}
+//             id="title"
+//             onChange={this.handleChange}
+//             placeHolder="Site Name"
+//           />
+//           <input
+//             type="text"
+//             value={this.state.url}
+//             id="url"
+//             onChange={this.handleChange}
+//             placeHolder="Site URL: https://"
+//           />
+
+//           <input type="submit" />
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
 class App extends React.Component {
   state = {
@@ -30,7 +103,7 @@ class App extends React.Component {
   }
 
   getData = () => {
-    fetch("http://localhost:3000/bookmarks")
+    fetch("/bookmarks")
       .then((response) => response.json())
       .then((data) => this.setState({ bookmarks: data }));
   };
@@ -81,6 +154,7 @@ class App extends React.Component {
 
   updateBookmarks = (bookmark) => {
     bookmark.complete = !bookmark.complete;
+    console.log(bookmark.complete);
 
     fetch(`bookmarks/${bookmark._id}`, {
       body: JSON.stringify(bookmark),
@@ -140,6 +214,8 @@ class App extends React.Component {
                     index={index}
                     deleteBookmark={this.deleteBookmark}
                     updateBookmarks={this.updateBookmarks}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
                   />
                 );
               })}

@@ -88,3 +88,9 @@ A completed bookmarks app that meets all the MVP requirements outlined above by 
 ## Submission Guidelines
 
 This assignment is due Tuesday 2/9/21.
+
+## Technical Requirements
+
+1. Your app (both back and frontend) MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
+
+---

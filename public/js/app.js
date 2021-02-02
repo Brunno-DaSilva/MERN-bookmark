@@ -1,35 +1,39 @@
-const BookmarkList = (props) => {
-  return (
-    <tr className="bookmark-wrapper">
-      <td>
-        {props.bookmark.complete ? (
-          <form onSubmit={(e) => props.handleSubmit(e)}>
-            <input
-              type="text"
-              onChange={(e) => props.handleChange(e)}
-              defaultValue={props.bookmark.title}
-            />
-            <input type="submit" />
-          </form>
-        ) : (
-          props.bookmark.title
-        )}
-      </td>
-      <td>
-        <a href={props.bookmark.url} target="_blank">
-          {props.bookmark.url}
-        </a>
-      </td>
-      <td onClick={() => props.deleteBookmark(props.bookmark._id, props.index)}>
-        <i class="fas fa-trash-alt"></i>
-      </td>
+class BookmarkList extends React.Component {
+  render() {
+    const { bookmark, deleteBookmark, updateBookmarks } = this.props;
 
-      <td onClick={() => props.updateBookmarks(props.bookmark)}>
-        <i class="fas fa-pencil-alt"></i>
-      </td>
-    </tr>
-  );
-};
+    return (
+      <tr className="bookmark-wrapper">
+        <td>
+          {bookmark.isEditOn ? (
+            <form onSubmit={(e) => props.handleSubmit(e)}>
+              <input
+                type="text"
+                onChange={(e) => props.handleChange(e)}
+                defaultValue={bookmark.title}
+              />
+              <input type="submit" />
+            </form>
+          ) : (
+            bookmark.title
+          )}
+        </td>
+        <td>
+          <a href={bookmark.url} target="_blank">
+            {bookmark.url}
+          </a>
+        </td>
+        <td onClick={() => deleteBookmark(bookmark._id, index)}>
+          <i class="fas fa-trash-alt"></i>
+        </td>
+
+        <td onClick={() => updateBookmarks(bookmark)}>
+          <i class="fas fa-pencil-alt"></i>
+        </td>
+      </tr>
+    );
+  }
+}
 
 // class Edit extends React.Component {
 //   state = {
@@ -153,8 +157,9 @@ class App extends React.Component {
   };
 
   updateBookmarks = (bookmark) => {
-    bookmark.complete = !bookmark.complete;
-    console.log(bookmark.complete);
+    bookmark.isEditOn = !bookmark.isEditOn;
+
+    console.log(bookmark.isEditOn);
 
     fetch(`bookmarks/${bookmark._id}`, {
       body: JSON.stringify(bookmark),

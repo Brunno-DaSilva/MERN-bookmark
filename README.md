@@ -51,3 +51,18 @@ Listed below is the basic required functionality that your Bookmark'd app should
   - Delete: Deleting a bookmark
   - Update: Updating a bookmark
   - **Make sure you TEST ALL ROUTES with postman or CURL BEFORE you move onto creating the frontend!**
+
+#### React Frontend User Stories
+
+- As a user, I can see a list of all my bookmarks when I visit the page
+- As a user, I can click on one of my bookmarks and have it take me to the linked website
+- As a user, I can create a new bookmark and see that it immediately loads on the page so that I know I successfully added a bookmark
+- As a user, I can delete a bookmark so I can keep my list relevant
+- As a user, I can update a bookmark in case I made a typo or the URL changed
+
+#### Additional Requirements
+
+- Your app must have styling! If you're maxing out on your 4 hours per night, spend 10 minutes adding some basic styling just so we know you know how, and leave a note in your git issue. If you're not maxing out on your 4 hours per night, your app should have portfolio quality styling or basic styling and H4M attempts.
+
+:red_circle: **Remember to commit often!**
+Because your workflow & the way you decide to tackle finishing this app is up to you, it's also up to you what you commit! Commit often and write helpful commit messages.

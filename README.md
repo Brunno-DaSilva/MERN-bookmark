@@ -21,3 +21,19 @@ Your goal for this week's homework is to build a bookmark app that lets users ad
 - React
 
 ---
+
+## The Bookmarks App
+
+You will be building an app that lets users add a title and a link to save websites in one neat list. When users click on a title, it should take them to the linked website.
+
+> :exclamation: GOTCHA - when testing it out, note that your links must start with http or https or else it will error!
+
+_Example:_
+
+![](https://i.imgur.com/yq9Ygeu.png)
+
+✨ Fun Fact: This homework was inspired by a coding challenge used during a company's hiring process. So, treat it like you're trying to get that job!
+
+## MVP
+
+Listed below is the basic required functionality that your Bookmark'd app should have. Some of the user stories are purposefully ambiguous to allow you all to ‘solve’ the problems in a way that is intuitive and makes sense to you, as opposed to just checking off specific steps from homework.

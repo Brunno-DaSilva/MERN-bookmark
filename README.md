@@ -66,3 +66,17 @@ Listed below is the basic required functionality that your Bookmark'd app should
 
 :red_circle: **Remember to commit often!**
 Because your workflow & the way you decide to tackle finishing this app is up to you, it's also up to you what you commit! Commit often and write helpful commit messages.
+
+## Hungry for More?
+
+- Make a searchbox that will filter the bookmark titles
+- Order the bookmarks alphabetically by title using mongoose or react
+- Make it so that the form clears after submit
+- Add an array of tags to the schema so you can organize your bookmarks by tags
+- As a user, I should not be able to add a duplicate bookmark so I can keep my list clean
+- Add some authorization to your app. Some possible user stories you can try:
+  - As a user, I can only use the app if I am logged in
+  - As a user, I can see everyone's bookmarks
+  - As a user, I can only update/delete my own bookmarks
+
+---

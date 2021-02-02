@@ -37,3 +37,17 @@ _Example:_
 ## MVP
 
 Listed below is the basic required functionality that your Bookmark'd app should have. Some of the user stories are purposefully ambiguous to allow you all to ‘solve’ the problems in a way that is intuitive and makes sense to you, as opposed to just checking off specific steps from homework.
+
+#### Express API
+
+- You should have a model for bookmarks that has the following schema:
+  ```
+  title: string
+  url: string
+  ```
+- You should have routes for...
+  - Index: Getting all bookmarks
+  - Create: Posting a new bookmark
+  - Delete: Deleting a bookmark
+  - Update: Updating a bookmark
+  - **Make sure you TEST ALL ROUTES with postman or CURL BEFORE you move onto creating the frontend!**

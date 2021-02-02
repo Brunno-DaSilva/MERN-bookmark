@@ -80,3 +80,7 @@ Because your workflow & the way you decide to tackle finishing this app is up to
   - As a user, I can only update/delete my own bookmarks
 
 ---
+
+## Deliverables
+
+A completed bookmarks app that meets all the MVP requirements outlined above by the dates below.

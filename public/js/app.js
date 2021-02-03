@@ -35,66 +35,6 @@ class BookmarkList extends React.Component {
   }
 }
 
-// class Edit extends React.Component {
-//   state = {
-//     title: "",
-//     url: "",
-//   };
-//   handleChange = (event) => {
-//     this.setState({ [event.target.id]: event.target.value });
-//   };
-
-//   handleSubmit = (event) => {
-//     event.preventDefault();
-
-//     fetch("/bookmarks", {
-//       body: JSON.stringify({
-//         title: this.state.title,
-//         url: this.state.url,
-//       }),
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json, text/plain, */*",
-//         "Content-Type": "application/json",
-//       },
-//     })
-//       .then((createBookmark) => createBookmark.json())
-//       .then((newBookmark) => {
-//         this.setState({
-//           title: "",
-//           url: "",
-//           bookmarks: [newBookmark, ...this.state.bookmarks],
-//         });
-//       })
-//       .catch((error) => console.log(error));
-//   };
-
-//   render() {
-//     return (
-//       <div className="">
-//         <form onSubmit={this.handleSubmit}>
-//           <input
-//             type="text"
-//             value={this.state.title}
-//             id="title"
-//             onChange={this.handleChange}
-//             placeHolder="Site Name"
-//           />
-//           <input
-//             type="text"
-//             value={this.state.url}
-//             id="url"
-//             onChange={this.handleChange}
-//             placeHolder="Site URL: https://"
-//           />
-
-//           <input type="submit" />
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-
 class App extends React.Component {
   state = {
     title: "",
@@ -142,7 +82,7 @@ class App extends React.Component {
   };
 
   deleteBookmark = (id, index) => {
-    // console.log(id, index);
+    console.log(id, index);
     fetch(`/bookmarks/${id}`, {
       method: "DELETE",
     }).then((data) => {
@@ -212,11 +152,11 @@ class App extends React.Component {
               <th className="danger">Edit</th>
             </thead>
             <tbody>
-              {this.state.bookmarks.map((bookmark, index) => {
+              {this.state.bookmarks.map((bookmark, i) => {
                 return (
                   <BookmarkList
                     bookmark={bookmark}
-                    index={index}
+                    index={i}
                     deleteBookmark={this.deleteBookmark}
                     updateBookmarks={this.updateBookmarks}
                     handleChange={this.handleChange}

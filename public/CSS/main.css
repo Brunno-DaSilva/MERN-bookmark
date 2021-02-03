@@ -20,9 +20,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   background: var(--light-yellow-bg);
-  height: 100vh;
-  min-height: 120vh;
   width: 100vw;
+  padding: 0.5rem;
 }
 
 /*////////////////////
@@ -115,6 +114,7 @@ h2 {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  padding-bottom: 2.5rem;
 }
 
 .main-title {
@@ -243,18 +243,18 @@ input[type="text"]:nth-child(2) {
 //        Footer                     
 /////////////////////////////*/
 svg {
-  margin-bottom: -35px;
+  margin-bottom: -55px;
   z-index: 5;
 }
 
 footer {
   width: 100vw;
-  height: 30vh;
   color: var(--sea-serpent);
   font-size: 1.3rem;
   letter-spacing: 4px;
   text-align: center;
   margin-top: auto;
+  padding: 2rem;
   background-color: var(--dark-blue);
   z-index: 6;
 }

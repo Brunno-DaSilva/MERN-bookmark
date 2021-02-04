@@ -168,6 +168,11 @@ td a:hover {
   cursor: pointer;
 }
 
+td i:hover {
+  cursor: pointer;
+  color: #c9970f;
+}
+
 tr :nth-child(3) {
   text-align: right;
   font-size: 1.3rem;
